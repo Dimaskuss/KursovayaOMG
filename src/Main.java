@@ -5,7 +5,7 @@ public class Main {
     static Employee employees[] = new Employee[10];
 
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
 
         employees[0] = new Employee("Дима", 1, 99000);
@@ -16,12 +16,17 @@ public class Main {
         employees[5] = new Employee("Захар", 4, 31000);
         employees[6] = new Employee("Лидия", 3, 76000);
         employees[7] = new Employee("Ярослав", 2, 62000);
-       employees[8] = new Employee("Никита", 4, 59000);
+        employees[8] = new Employee("Никита", 4, 59000);
         employees[9] = new Employee("Дарина", 3, 48000);
 
 
+        printEmployee();
+    }
 
+    public static void printEmployee() {
+        for (int i = 0; i < employees.length && employees[i] != null; i++) {
+            System.out.println(employees[i].toString());
+        }
 
-    EmployeeService.printEmployee();
     }
 }
