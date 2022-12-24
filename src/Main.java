@@ -2,10 +2,10 @@ import java.io.OptionalDataException;
 
 public class Main {
 
-    static Employee employees[] = new Employee[10];
+     static Employee[] employees = new Employee[10];
 
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
 
         employees[0] = new Employee("Дима", 1, 99000);
@@ -17,16 +17,50 @@ public class Main {
         employees[6] = new Employee("Лидия", 3, 76000);
         employees[7] = new Employee("Ярослав", 2, 62000);
         employees[8] = new Employee("Никита", 4, 59000);
-        employees[9] = new Employee("Дарина", 3, 48000);
+//        employees[9] = new Employee("Дарина", 3, 48000);
 
-
+        System.out.println("sdf");
         printEmployee();
+        getSalarySum();
+        getMaxSalary();
+        getMinSalary();
+        System.out.println(employees[2].getName());
     }
-
     public static void printEmployee() {
+
         for (int i = 0; i < employees.length && employees[i] != null; i++) {
             System.out.println(employees[i].toString());
         }
+    }
+        public static void getSalarySum() {
+            int sum = 0;
+            for (int i = 0; i < employees.length && employees[i] != null; i++) {
+                sum = sum + employees[i].getSalary();
+            }
+            System.out.println(sum);
+        }
+
+        public  static void getMaxSalary() {
+          int  maxSalary = 0;
+            for (int i = 0; i < employees.length && employees[i] != null; i++) {
+                Employee employee = employees[i];
+                if (employee.getSalary() > maxSalary) {
+                    maxSalary = employee.getSalary();
+                }
+            }
+            System.out.println(maxSalary);
+
+        }
+    public  static void getMinSalary() {
+        int  minSalary = 999999999;
+        for (int i = 0; i < employees.length && employees[i] != null; i++) {
+            Employee employee = employees[i];
+            if (employee.getSalary() < minSalary) {
+                minSalary = employee.getSalary();
+            }
+        }
+        System.out.println(minSalary);
 
     }
-}
+    }
+
