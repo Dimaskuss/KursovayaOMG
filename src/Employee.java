@@ -2,11 +2,15 @@ import java.util.Objects;
 
 public class Employee {
 
+
     private final String name;
     private int numberDepartment;
     private int salary;
     private final int id;
     private static int counter;
+
+    public static int maxxx = 999999999;
+    public static int minnn = 0;
 
 
     public Employee(String name, int numberDepartment, int salary) {
@@ -21,7 +25,7 @@ public class Employee {
 
     }
 
-    private int getId() {
+    public int getId() {
         return id;
     }
 
@@ -41,7 +45,7 @@ public class Employee {
         this.numberDepartment = numberDepartment;
     }
 
-    public void setSalary(int salary) {
+    public void getSalary(int salary) {
         this.salary = salary;
     }
 
@@ -68,7 +72,13 @@ public class Employee {
         return Objects.hash(name, id);
     }
 
-
+    public int getMaxxx() {
+        return maxxx;
     }
+
+    public int getMinnn() {
+        return minnn;
+    }
+}
 
 
