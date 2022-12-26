@@ -45,7 +45,7 @@ public class Employee {
         this.numberDepartment = numberDepartment;
     }
 
-    public void getSalary(int salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -72,11 +72,11 @@ public class Employee {
         return Objects.hash(name, id);
     }
 
-    public int getMaxxx() {
+    public static int getMaxxx() {
         return maxxx;
     }
 
-    public int getMinnn() {
+    public static int getMinnn() {
         return minnn;
     }
 }
